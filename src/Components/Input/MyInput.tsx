@@ -1,7 +1,7 @@
 import React from 'react';
 
 type myInputType = {
-    inputValue: number
+    inputValue: string
     className:string
 }
 const MyInput = (props: myInputType) => {

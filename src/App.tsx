@@ -1,36 +1,73 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 // @ts-ignore
 import s from './App.module.css';
 import MyInput from "./Components/Input/MyInput";
 import MyButton from "./Components/Button/MyButton";
 
 function App() {
-    // STATES
-    const [startValue, setStartValue] = useState<number>(0)
-    const [startValueSettings, setStartValueSettings] = useState<number>(0)
-    const [maxValue, setMaxValue] = useState<number>(5)
-    const [maxValueSettings, setMaxValueSettings] = useState<number>(5)
-    const [countValue, setCountValue] = useState<number>(0)
+
+    let initialCountValue:string;
+    let initialMaxValue:string;
+    let initialStartValueSettings: Number;
+
+    localStorage.getItem('startValue') === null ? initialCountValue = "0" : initialCountValue = (localStorage.getItem('startValue'))+"" ;
+    localStorage.getItem('maxValue') === null ? initialMaxValue = "5" : initialMaxValue = (localStorage.getItem('maxValue'))+"";
+
+    // STATES Counter
+    const [countValue, setCountValue] = useState<string>(initialCountValue)
+    const [startValue, setStartValue] = useState<string>(initialCountValue)
+    const [maxValue, setMaxValue] = useState<string>(initialMaxValue)
+    // STATES Settings
+    const [startValueSettings, setStartValueSettings] = useState<number>(+countValue)
+    const [maxValueSettings, setMaxValueSettings] = useState<number>(+maxValue)
     const [incorrectValue, SetIncorrectValue] = useState<boolean>(false)
+//const [editMode,SetEditMode] = useState<boolean>(false)
+
     // help Functions
     const increaseValue = () => {
-        setCountValue(countValue + 1)
+        let newValue = +countValue + 1
+        setCountValue(newValue+"")
     }
     const resetValue = () => {
         setCountValue(startValue)
     }
     const setValuesHandler = () => {
-        setMaxValue(maxValueSettings);
-        setStartValue(startValueSettings);
-        setTimeout(resetValue, 1)
+        setMaxValue(maxValueSettings+"");
+        setStartValue(startValueSettings+"");
+        resetValue()
+//        SetEditMode(false)
     }
     // Handlers
     const onChangeMaxValueSettingsHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setMaxValueSettings(JSON.parse(e.currentTarget.value))
+        setMaxValueSettings(+e.target.value)
     }
     const onChangeStartValueSettingsHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setStartValueSettings(JSON.parse(e.currentTarget.value))
+        setStartValueSettings(+e.currentTarget.value)
     }
+
+
+    useEffect(() => {
+        if(startValueSettings < 0 || maxValueSettings <= startValueSettings) {
+            setCountValue("Wrong value")
+            SetIncorrectValue(true)
+        }else {
+            setCountValue("Press Set")
+            setMaxValueSettings(maxValueSettings)
+            setStartValueSettings(startValueSettings)
+            SetIncorrectValue(false)
+//            SetEditMode(true)
+        }
+    }, [maxValueSettings,startValueSettings])
+    useEffect(()=>{
+        setCountValue(startValue)
+        localStorage.setItem('startValue', startValue)
+        localStorage.setItem('maxValue', maxValue)
+    },[startValue,maxValue])
+    useEffect(()=>{
+        console.log ('startValue =' + localStorage.getItem('startValue'))
+        console.log ('maxValue =' + localStorage.getItem('maxValue'))
+
+    }, [])
 
     return (<>
             <div className={s.TitlePage}>Counter with settings</div>
@@ -39,10 +76,10 @@ function App() {
                 {/*COUNTER*/}
                 <div className={s.CounterDiv}>
 
-                    <MyInput inputValue={countValue} className={s.inputCounter}/>
+                    <MyInput inputValue={countValue+""} className={(countValue == maxValue) || incorrectValue ? `${s.inputCounter} ${s.red}` : `${s.inputCounter}` }/>
                     <div className={s.CounterButtonArea}>
-                        <MyButton title="incr." callBack={increaseValue} isDisabled={countValue >= maxValue}/>
-                        <MyButton title="reset." callBack={resetValue} isDisabled={countValue <= startValue}/>
+                        <MyButton title="incr." callBack={increaseValue} isDisabled={countValue >= maxValue || incorrectValue}/>
+                        <MyButton title="reset." callBack={resetValue} isDisabled={countValue <= startValue || incorrectValue}/>
                     </div>
 
                 </div>
@@ -63,7 +100,7 @@ function App() {
                         <div className={s.StartValueDiv}>Start-value:</div>
 
                         <div className={s.SetButtonArea}>
-                            <button onClick={setValuesHandler} className={s.ButtonSet}>Set</button>
+                            <button onClick={setValuesHandler} disabled={incorrectValue} className={s.ButtonSet}>Set</button>
                         </div>
                     </div>
                 </div>
