@@ -1,0 +1,157 @@
+.TitlePage{
+    height: 80px;
+    text-align: center;
+}
+.container {  display: grid;
+
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 300px;
+    gap: 20px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+            "SettingsDiv CounterDiv";
+
+    height: 10em;
+    display: block;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.SettingsDiv {
+    grid-area: SettingsDiv;
+    display: block;
+    padding: 20px;
+}
+
+.CounterSettings {
+    display: grid;
+    grid-template-columns: 125px 225px;
+    grid-template-rows: 50px 50px 50px;
+    gap: 10px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "Max-value input1" "Start-value input2" "Set-button Set-button";
+    color: dodgerblue;
+    width: 350px;
+    margin: 0 auto;
+    border: solid black;
+    border-radius: 15px;
+    background-color: transparent;
+    padding: 10px;
+}
+input{
+    text-align: center;
+    height: 30px;
+    width: 180px;
+    margin: 7px auto;
+    font-size: larger;
+}
+.MaxValueDiv {
+    padding: 9px;
+    font-size: larger;
+    grid-area: Max-value;
+    border-radius: 15px 0px 0px 15px;
+    text-align: center;
+    background-color: black;
+
+}
+
+.StartValueDiv {
+    padding: 9px;
+    font-size: larger;
+    grid-area: Start-value;
+    border-radius: 15px 0px 0px 15px;
+    text-align: center;
+    background-color: black;
+}
+.inputMaxValue {
+    grid-area: input1;
+    border-radius: 0px 15px 15px 0px;
+    text-align: center;
+    background-color: black;
+}
+
+.inputStartValue {
+    grid-area: input2;
+    border-radius: 0px 15px 15px 0px;
+    text-align: center;
+    background-color: black;
+}
+
+.SetButtonArea {
+    grid-area: Set-button;
+    text-align: center;
+
+}
+
+.CounterDiv {
+    grid-area: CounterDiv;
+    color: dodgerblue;
+    width: 350px;
+    height: 170px;
+    margin: 0 auto;
+    border: solid black;
+    border-radius: 15px;
+    background-color: transparent;
+    padding: 10px;
+
+    display: block;
+    align-items: center;
+    justify-content: center
+}
+.inputCounter {
+    height: 40px;
+    width: 82%;
+    border-bottom: black solid;
+    padding: 30px;
+    font-size: xx-large;
+    text-align: center;
+}
+.red{
+    color: red;
+}
+.CounterButtonArea {
+    display: flex;
+    padding-top: 8px;
+}
+
+.Counter {
+    text-align: center;
+    width: 350px;
+    height: 200px;
+    background-color: black;
+    margin: 50px auto;
+    border: solid;
+    color: dodgerblue;
+    border-radius: 15px;
+
+}
+.inputDiv {
+    text-align: center;
+    width: 300px;
+    height: 80px;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: solid;
+    color: dodgerblue;
+    font-size: 45px;
+    background-color: black;
+}
+.inputText {
+    color: darkred;
+}
+.alarm {
+    font-size: 65px;
+    color: darkred;
+    border: solid;
+    color: dodgerblue;
+}
+button {
+    font-size: 25px;
+    width: 100px;
+    height: 40px;
+    margin: 15px auto;
+    border: solid;
+    color: dodgerblue;
+    border-radius: 15px;
+}
