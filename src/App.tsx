@@ -51,7 +51,7 @@ function App() {
             setCountValue("Wrong value")
             SetIncorrectValue(true)
         }else {
-            setCountValue("Press Set")
+            setCountValue('Press "Set"')
             setMaxValueSettings(maxValueSettings)
             setStartValueSettings(startValueSettings)
             SetIncorrectValue(false)
