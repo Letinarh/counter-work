@@ -2,29 +2,27 @@
     height: 80px;
     text-align: center;
 }
-
-.container {  display: grid;
-
-    grid-template-columns: 350px 350px;
-    grid-template-rows: 300px;
-    gap: 20px 10px;
-    grid-auto-flow: row;
-    grid-template-areas:
-            "SettingsDiv CounterDiv";
-
-    height: 10em;
-    display: block;
-    align-items: center;
-    justify-content: center;
-
+.container {
+    text-align: center;
 }
 
+.CounterDiv {
+    color: dodgerblue;
+    width: 350px;
+    height: 170px;
+    border: solid black;
+    border-radius: 15px;
+    background-color: transparent;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 0px;
+}
 .SettingsDiv {
-    grid-area: SettingsDiv;
-    display: block;
-    padding: 20px;
-}
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
 
+}
 .CounterSettings {
     display: grid;
     grid-template-columns: 125px 225px;
@@ -47,6 +45,7 @@ input{
     margin: 7px auto;
     font-size: larger;
 }
+
 .inputActive{
     color: red;
 }
@@ -58,7 +57,6 @@ input{
     border-radius: 15px 0px 0px 15px;
     text-align: center;
     background-color: black;
-
 }
 
 .StartValueDiv {
@@ -69,6 +67,7 @@ input{
     text-align: center;
     background-color: black;
 }
+
 .inputMaxValue {
     grid-area: input1;
     border-radius: 0px 15px 15px 0px;
@@ -89,21 +88,7 @@ input{
 
 }
 
-.CounterDiv {
-    grid-area: CounterDiv;
-    color: dodgerblue;
-    width: 350px;
-    height: 170px;
-    margin: 0 auto;
-    border: solid black;
-    border-radius: 15px;
-    background-color: transparent;
-    padding: 10px;
 
-    display: block;
-    align-items: center;
-    justify-content: center
-}
 .inputCounter {
     height: 40px;
     width: 82%;
@@ -112,6 +97,7 @@ input{
     font-size: 3rem;
     text-align: center;
 }
+
 .red{
     color: red;
     font-size: 2.9rem;
@@ -119,6 +105,8 @@ input{
 }
 .CounterButtonArea {
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 8px;
 }
 
@@ -131,8 +119,8 @@ input{
     border: solid;
     color: dodgerblue;
     border-radius: 15px;
-
 }
+
 .inputDiv {
     text-align: center;
     width: 300px;
@@ -144,15 +132,18 @@ input{
     font-size: 45px;
     background-color: black;
 }
+
 .inputText {
     color: darkred;
 }
+
 .alarm {
     font-size: 65px;
     color: darkred;
     border: solid;
     color: dodgerblue;
 }
+
 button {
     font-size: 25px;
     width: 100px;

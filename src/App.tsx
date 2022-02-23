@@ -64,6 +64,7 @@ function App() {
         localStorage.setItem('maxValue', maxValue)
     },[startValue,maxValue])
     useEffect(()=>{
+        SetEditMode(false)
         console.log ('startValue =' + localStorage.getItem('startValue'))
         console.log ('maxValue =' + localStorage.getItem('maxValue'))
     }, [])
