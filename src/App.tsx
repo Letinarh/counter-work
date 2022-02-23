@@ -21,7 +21,7 @@ function App() {
     const [startValueSettings, setStartValueSettings] = useState<number>(+countValue)
     const [maxValueSettings, setMaxValueSettings] = useState<number>(+maxValue)
     const [incorrectValue, SetIncorrectValue] = useState<boolean>(false)
-//const [editMode,SetEditMode] = useState<boolean>(false)
+    const [editMode,SetEditMode] = useState<boolean>(false)
 
     // help Functions
     const increaseValue = () => {
@@ -35,7 +35,7 @@ function App() {
         setMaxValue(maxValueSettings+"");
         setStartValue(startValueSettings+"");
         resetValue()
-//        SetEditMode(false)
+        SetEditMode(false)
     }
     // Handlers
     const onChangeMaxValueSettingsHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -55,7 +55,7 @@ function App() {
             setMaxValueSettings(maxValueSettings)
             setStartValueSettings(startValueSettings)
             SetIncorrectValue(false)
-//            SetEditMode(true)
+            SetEditMode(true)
         }
     }, [maxValueSettings,startValueSettings])
     useEffect(()=>{
@@ -66,7 +66,6 @@ function App() {
     useEffect(()=>{
         console.log ('startValue =' + localStorage.getItem('startValue'))
         console.log ('maxValue =' + localStorage.getItem('maxValue'))
-
     }, [])
 
     return (<>
@@ -78,8 +77,8 @@ function App() {
 
                     <MyInput inputValue={countValue+""} className={(countValue == maxValue) || incorrectValue ? `${s.inputCounter} ${s.red}` : `${s.inputCounter}` }/>
                     <div className={s.CounterButtonArea}>
-                        <MyButton title="incr." callBack={increaseValue} isDisabled={countValue >= maxValue || incorrectValue}/>
-                        <MyButton title="reset." callBack={resetValue} isDisabled={countValue <= startValue || incorrectValue}/>
+                        <MyButton title="incr." callBack={increaseValue} isDisabled={parseInt(countValue,10) >= parseInt(maxValue,10)  || incorrectValue || editMode}/>
+                        <MyButton title="reset." callBack={resetValue} isDisabled={parseInt(countValue,10) <= parseInt(startValue,10) || incorrectValue || editMode}/>
                     </div>
 
                 </div>
