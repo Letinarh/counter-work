@@ -53,7 +53,12 @@ body{
     padding: 10px;
     background: conic-gradient(at 0% 30%, red 10%, yellow 30%, #1e90ff 50%);
 }
-
+button{
+    background-color: rgba(0,0,0,0.8);
+}
+button:disabled{
+    background-color: rgba(20,20,20,0.4);
+}
 input {
     text-align: center;
     height: 30px;
