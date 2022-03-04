@@ -6,7 +6,10 @@ body {
 /*  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;*/
 
-  background-color: gray;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/384262b1-5fd3-4672-ad62-5a8725d1bc38/d3bgo7y-2a468940-2aec-404f-8f14-c5645379992b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM4NDI2MmIxLTVmZDMtNDY3Mi1hZDYyLTVhODcyNWQxYmMzOFwvZDNiZ283eS0yYTQ2ODk0MC0yYWVjLTQwNGYtOGYxNC1jNTY0NTM3OTk5MmIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.a2-UyCmVC7oylB7mZgYjXZdi7DGOz73Wp5MoCCPtn6c");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 
 
 }

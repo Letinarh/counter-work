@@ -60,17 +60,17 @@ function App() {
     }, [maxValueSettings,startValueSettings])
     useEffect(()=>{
         setCountValue(startValue)
-        localStorage.setItem('startValue', startValue)
-        localStorage.setItem('maxValue', maxValue)
+        // localStorage.setItem('startValue', startValue)
+        // localStorage.setItem('maxValue', maxValue)
     },[startValue,maxValue])
     useEffect(()=>{
         SetEditMode(false)
-        console.log ('startValue =' + localStorage.getItem('startValue'))
-        console.log ('maxValue =' + localStorage.getItem('maxValue'))
+        // console.log ('startValue =' + localStorage.getItem('startValue'))
+        // console.log ('maxValue =' + localStorage.getItem('maxValue'))
     }, [])
 
     return (<>
-            <div className={s.TitlePage}>Counter with settings</div>
+            <div className={s.TitlePage}> Counter with settings</div>
             <div className={s.container}>
 
                 {/*COUNTER*/}

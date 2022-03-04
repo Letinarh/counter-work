@@ -1,29 +1,44 @@
 .TitlePage {
-
-    padding-top: 20px;
-    height: 50px;
-    text-align: center;
+    text-shadow: 3px 5px 7px black;
+    color: whitesmoke;
     font-family: -apple-system;
     font-size: xx-large;
+    padding-top: 25px;
+    padding-bottom: 10px;
+/*    display: block;
+    margin: 15px auto;
+    height: 45px;
+    width: 350px;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.8);
+    color: whitesmoke;
+    text-align: center;
+
+    box-sizing: border-box;*/
 }
-body{
+
+body {
     text-align: center;
     background-color: whitesmoke;
 }
+
 .container {
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
     padding: 15px;
     grid-gap: 15px;
 }
+
 @media screen and (max-width: 800px) {
     .container {
         grid-template-columns: 1fr
     }
 }
-.buttonSettings{
+
+.buttonSettings {
 
 }
+
 .CounterDiv {
     color: dodgerblue;
     width: 350px;
@@ -31,7 +46,8 @@ body{
     border: solid black;
     border-radius: 15px;
     padding: 10px;
-    background: conic-gradient(at 0% 30%, red 10%, yellow 30%, #1e90ff 50%);
+    background: rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 5px 7px black;
 }
 
 .SettingsDiv {
@@ -51,14 +67,18 @@ body{
     border: solid black;
     border-radius: 15px;
     padding: 10px;
-    background: conic-gradient(at 0% 30%, red 10%, yellow 30%, #1e90ff 50%);
+    background: rgba(0, 0, 0, 0.3);
+
 }
-button{
-    background-color: rgba(0,0,0,0.8);
+
+button {
+    background-color: rgba(0, 0, 0, 0.8);
 }
-button:disabled{
-    background-color: rgba(20,20,20,0.4);
+
+button:disabled {
+    background-color: rgba(20, 20, 20, 0.4);
 }
+
 input {
     text-align: center;
     height: 30px;
@@ -77,7 +97,7 @@ input {
     grid-area: Max-value;
     border-radius: 15px 0px 0px 15px;
     text-align: center;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .StartValueDiv {
@@ -86,21 +106,21 @@ input {
     grid-area: Start-value;
     border-radius: 15px 0px 0px 15px;
     text-align: center;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .inputMaxValue {
     grid-area: input1;
     border-radius: 0px 15px 15px 0px;
     text-align: center;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(20, 20, 20, 0.7);
 }
 
 .inputStartValue {
     grid-area: input2;
     border-radius: 0px 15px 15px 0px;
     text-align: center;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(20, 20, 20, 0.7);
 }
 
 .SetButtonArea {
